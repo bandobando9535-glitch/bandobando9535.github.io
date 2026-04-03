@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 포트폴리오</title>
+    <title>이경민 | Game Developer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- 헤더: 내 이름과 직업 -->
     <header>
         <nav>
-            <div class="logo">Portfolio</div>
+            <div class="logo">&lt;이경민 /&gt;</div>
             <ul class="nav-links">
                 <li><a href="#about">소개</a></li>
                 <li><a href="#skills">기술</a></li>
@@ -20,51 +20,85 @@
             </ul>
         </nav>
         <div class="hero">
-            <h1>안녕하세요, <span class="highlight">홍길동</span>입니다</h1>
-            <p>웹 개발에 관심 있는 개발자입니다</p>
-            <a href="#projects" class="btn">프로젝트 보기</a>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="prompt">$</span> whoami</p>
+                    <p class="output">이경민 — Game Developer</p>
+                    <p><span class="prompt">$</span> cat skills.txt</p>
+                    <p class="output">Unity, C#, WebGL, Game Design</p>
+                    <p><span class="prompt">$</span> <span class="cursor">_</span></p>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- 소개 섹션 -->
     <section id="about" class="section">
-        <h2>소개</h2>
-        <p>웹 개발을 공부하고 있는 개발자입니다. 새로운 기술을 배우는 것을 좋아하며, 
-           사용자에게 편리한 서비스를 만드는 것이 목표입니다.</p>
+        <h2><span class="hash">#</span> 소개</h2>
+        <div class="about-content">
+            <p>게임 개발자 <strong>이경민</strong>입니다.</p>
+            <p>Unity 와 C#을 사용하여 게임을 만들고 있습니다.</p>
+            <p>새로운 기술을 배우고, 재미있는 게임을 만드는 것이 목표입니다.</p>
+        </div>
     </section>
 
     <!-- 기술 섹션 -->
     <section id="skills" class="section">
-        <h2>기술 스택</h2>
+        <h2><span class="hash">#</span> 기술 스택</h2>
         <div class="skills-grid">
-            <div class="skill-card">HTML/CSS</div>
-            <div class="skill-card">JavaScript</div>
-            <div class="skill-card">React</div>
-            <div class="skill-card">Node.js</div>
-            <div class="skill-card">Git</div>
-            <div class="skill-card">Python</div>
+            <div class="skill-card">
+                <span class="skill-icon">&#9654;</span>
+                <span class="skill-name">Unity</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">#</span>
+                <span class="skill-name">C#</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">&lt;/&gt;</span>
+                <span class="skill-name">HTML/CSS</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">JS</span>
+                <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">&#9737;</span>
+                <span class="skill-name">WebGL</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">&#9881;</span>
+                <span class="skill-name">Git</span>
+            </div>
         </div>
     </section>
 
     <!-- 게임 섹션 -->
     <section id="games" class="section">
-        <h2>Unity 게임</h2>
+        <h2><span class="hash">#</span> Unity 게임</h2>
         <div class="games-grid">
             <div class="game-card">
+                <div class="game-icon">&#127918;</div>
                 <h3>내 게임</h3>
                 <p>Unity로 만든 게임입니다. 즐겨보세요!</p>
                 <div class="game-tags">
                     <span class="tag">Unity</span>
                     <span class="tag">C#</span>
+                    <span class="tag">WebGL</span>
                 </div>
-                <a href="games/index.html" class="btn-small" target="_blank">플레이하기</a>
+                <a href="games/index.html" class="btn-small" target="_blank">&#9654; 플레이하기</a>
             </div>
         </div>
     </section>
 
     <!-- 프로젝트 섹션 -->
     <section id="projects" class="section">
-        <h2>프로젝트</h2>
+        <h2><span class="hash">#</span> 프로젝트</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <h3>프로젝트 1</h3>
@@ -86,14 +120,16 @@
 
     <!-- 연락처 섹션 -->
     <section id="contact" class="section">
-        <h2>연락처</h2>
-        <p>이메일: your@email.com</p>
-        <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+        <h2><span class="hash">#</span> 연락처</h2>
+        <div class="contact-content">
+            <p>이메일: GitHub Issues 로 연락주세요</p>
+            <p>GitHub: <a href="https://github.com/bandobando9535-glitch" target="_blank">github.com/bandobando9535-glitch</a></p>
+        </div>
     </section>
 
     <!-- 푸터 -->
     <footer>
-        <p>&copy; 2026 홍길동. All rights reserved.</p>
+        <p>&copy; 2026 이경민. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

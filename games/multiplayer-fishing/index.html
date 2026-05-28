@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Fishing | 이경민</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        /* 게임 상세 페이지 전용 스타일 */
+        .game-detail {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+
+        .game-detail-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .game-detail-header .game-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .game-detail-header h1 {
+            color: #c9d1d9;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-detail-header .game-meta {
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .game-detail-header .game-meta span {
+            margin: 0 0.5rem;
+        }
+
+        .game-detail-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .game-detail-section h2 {
+            color: #58a6ff;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #21262d;
+            font-family: 'Consolas', 'Courier New', monospace;
+        }
+
+        .game-detail-section h2::before {
+            content: "# ";
+            color: #27c93f;
+        }
+
+        .game-detail-section p {
+            color: #8b949e;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .game-detail-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .game-detail-section ul li {
+            color: #8b949e;
+            padding: 0.6rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .game-detail-section ul li::before {
+            content: "▸";
+            color: #27c93f;
+            position: absolute;
+            left: 0;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tags .tag {
+            background: #1f2937;
+            color: #58a6ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid #30363d;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #58a6ff;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-family: 'Consolas', 'Courier New', monospace;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #27c93f;
+        }
+
+        .back-link::before {
+            content: "<< ";
+            color: #27c93f;
+        }
+
+        .game-detail-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #21262d;
+        }
+
+        .game-detail-footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .game-detail-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .game-detail-header h1 {
+                font-size: 1.6rem;
+            }
+            .game-detail {
+                padding: 1.5rem 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header style="min-height: auto; border-bottom: 1px solid #30363d;">
+        <nav>
+            <div class="logo">&lt;이경민 /&gt;</div>
+            <a href="../../index.html#projects" class="back-link">프로젝트 목록으로 돌아가기</a>
+        </nav>
+    </header>
+
+    <main class="game-detail">
+        <div class="game-detail-header">
+            <div class="game-icon">&#127907;</div>
+            <h1>Multiplayer Fishing</h1>
+            <p class="game-meta">
+                <span>2026</span>
+                <span>|</span>
+                <span>GitHub 팀 협업</span>
+                <span>|</span>
+                <span>Unity, Mirror</span>
+            </p>
+            <div class="tech-tags">
+                <span class="tag">Unity 6</span>
+                <span class="tag">C#</span>
+                <span class="tag">Mirror</span>
+                <span class="tag">Unity Relay</span>
+                <span class="tag">Supabase</span>
+                <span class="tag">REST API</span>
+                <span class="tag">Animator Controller</span>
+                <span class="tag">Character Animation</span>
+                <span class="tag">Network Debugging</span>
+                <span class="tag">GitHub Collaboration</span>
+                <span class="tag">ScriptableObject</span>
+                <span class="tag">Inventory System</span>
+                <span class="tag">Shop System</span>
+                <span class="tag">NPOI Excel Parser</span>
+            </div>
+        </div>
+
+        <div class="game-detail-section">
+            <h2>프로젝트 소개</h2>
+            <p>
+                Multiplayer Fishing은 Mirror 서버를 이용해 구현한 캐주얼 멀티플레이어 낚시 게임입니다.
+                여러 플레이어가 같은 공간에서 이동하고 낚시 플레이를 진행하는 흐름을 목표로 제작했습니다.
+            </p>
+            <p>
+                이 프로젝트는 GitHub를 사용해 팀원들과 협업했습니다. 저는 캐릭터 애니메이션 프로그래밍,
+                서버 내 버그 및 오류 수정, Supabase 연동 파트를 맡았습니다.
+            </p>
+            <p>
+                물고기를 잡을 때마다 포획한 물고기 데이터와 재화 데이터가 Supabase에 기록되도록 연결했고,
+                Supabase에서 잡은 물고기 데이터와 재화 데이터를 확인할 수 있는 흐름을 구현했습니다.
+            </p>
+        </div>
+
+        <div class="game-detail-section">
+            <h2>담당 포지션</h2>
+            <ul>
+                <li>캐릭터 이동 상태에 맞춘 이동 및 낚시 애니메이션 연결과 전환 로직 구현</li>
+                <li>멀티플레이 환경에서 발생하는 서버 관련 버그와 오류 수정</li>
+                <li>물고기 포획 데이터와 재화 데이터를 Supabase에 저장하고 확인할 수 있도록 연동</li>
+                <li>GitHub 기반 협업 과정에서 기능 수정 사항 관리 및 반영</li>
+            </ul>
+        </div>
+
+        <div class="game-detail-section">
+            <h2>수정한 버그</h2>
+            <p>
+                멀티플레이 상황에서 플레이어 캐릭터가 앞뒤로 떨리는(Jitter) 오류를 수정했습니다.
+            </p>
+            <ul>
+                <li>
+                    Mirror 기반 서버 권한(Server Authority) 이동 구조에서 클라이언트 입력 처리와 서버 이동 시뮬레이션이
+                    서로 다른 업데이트 루프(Update / FixedUpdate)에서 동작하며 위치 보정이 불안정해지는 문제를 분석했습니다.
+                </li>
+                <li>
+                    입력 처리와 서버 이동 흐름을 동일한 프레임 기준으로 정리하고, 원격 플레이어의 CharacterController 및
+                    로컬 이동 로직이 NetworkTransform 보간 결과와 충돌하지 않도록 구조를 분리했습니다.
+                </li>
+                <li>
+                    이를 통해 원격 플레이어 및 호스트 환경에서 발생하던 캐릭터 떨림(Jitter) 현상을 개선했습니다.
+                </li>
+                <li>
+                    이 과정에서 멀티플레이 환경에서는 로컬에서 자연스럽게 보이는 움직임도 서버 동기화 및 갱신 타이밍이
+                    겹치면 흔들림으로 보일 수 있다는 점을 경험했습니다.
+                </li>
+            </ul>
+        </div>
+
+        <div class="game-detail-footer">
+            <p style="color: #8b949e;">
+                원본 프로젝트 페이지:
+                <a href="https://www.sunq.dev/projects/multiplayer-fishing.html" target="_blank">
+                    sunq.dev/multiplayer-fishing
+                </a>
+            </p>
+            <a href="../../index.html#projects" class="btn-small" style="margin-top: 1.5rem;">&#8592; 포트폴리오로 돌아가기</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 이경민. All rights reserved.</p>
+    </footer>
+</body>
+</html>

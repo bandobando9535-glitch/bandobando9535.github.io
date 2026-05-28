@@ -6,7 +6,6 @@
     <title>Multiplayer Fishing | 이경민</title>
     <link rel="stylesheet" href="../../style.css">
     <style>
-        /* 게임 상세 페이지 전용 스타일 */
         .game-detail {
             max-width: 800px;
             margin: 0 auto;
@@ -87,6 +86,7 @@
             flex-wrap: wrap;
             gap: 0.6rem;
             margin-top: 1rem;
+            justify-content: center;
         }
 
         .tech-tags .tag {
@@ -96,6 +96,28 @@
             border-radius: 20px;
             font-size: 0.8rem;
             border: 1px solid #30363d;
+        }
+
+        .game-screenshots {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .game-screenshots img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            transition: border-color 0.3s;
+        }
+
+        .game-screenshots img:hover {
+            border-color: #58a6ff;
+        }
+
+        .game-screenshots .full-width {
+            grid-column: 1 / -1;
         }
 
         .back-link {
@@ -123,13 +145,23 @@
             border-top: 1px solid #21262d;
         }
 
-        .game-detail-footer a {
-            color: #58a6ff;
-            text-decoration: none;
+        .feature-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .game-detail-footer a:hover {
-            text-decoration: underline;
+        .feature-box h3 {
+            color: #27c93f;
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
         }
 
         @media (max-width: 768px) {
@@ -138,6 +170,9 @@
             }
             .game-detail {
                 padding: 1.5rem 5%;
+            }
+            .game-screenshots {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -183,60 +218,66 @@
             <h2>프로젝트 소개</h2>
             <p>
                 Multiplayer Fishing은 Mirror 서버를 이용해 구현한 캐주얼 멀티플레이어 낚시 게임입니다.
-                여러 플레이어가 같은 공간에서 이동하고 낚시 플레이를 진행하는 흐름을 목표로 제작했습니다.
-            </p>
-            <p>
-                이 프로젝트는 GitHub를 사용해 팀원들과 협업했습니다. 저는 캐릭터 애니메이션 프로그래밍,
-                서버 내 버그 및 오류 수정, Supabase 연동 파트를 맡았습니다.
-            </p>
-            <p>
-                물고기를 잡을 때마다 포획한 물고기 데이터와 재화 데이터가 Supabase에 기록되도록 연결했고,
-                Supabase에서 잡은 물고기 데이터와 재화 데이터를 확인할 수 있는 흐름을 구현했습니다.
+                여러 플레이어가 같은 공간에서 자유롭게 이동하고, 함께 낚시를 즐길 수 있는 것이 특징입니다.
+                실시간으로 다른 플레이어의 움직임과 낚시 액션이 동기화되어, 혼자가 아닌 함께 하는
+                낚시의 재미를 제공합니다.
             </p>
         </div>
 
         <div class="game-detail-section">
-            <h2>담당 포지션</h2>
-            <ul>
-                <li>캐릭터 이동 상태에 맞춘 이동 및 낚시 애니메이션 연결과 전환 로직 구현</li>
-                <li>멀티플레이 환경에서 발생하는 서버 관련 버그와 오류 수정</li>
-                <li>물고기 포획 데이터와 재화 데이터를 Supabase에 저장하고 확인할 수 있도록 연동</li>
-                <li>GitHub 기반 협업 과정에서 기능 수정 사항 관리 및 반영</li>
-            </ul>
+            <h2>게임 특징</h2>
+
+            <div class="feature-box">
+                <h3>🎣 실시간 멀티플레이 낚시</h3>
+                <p>
+                    Mirror 네트워크 라이브러리를 기반으로 여러 플레이어가 동시에 같은 공간에서
+                    낚시를 즐길 수 있습니다. Unity Relay를 통해 NAT 환경에서도 안정적인
+                    멀티플레이 연결을 지원합니다.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <h3>🐟 Supabase 데이터 연동</h3>
+                <p>
+                    물고기를 잡을 때마다 포획한 물고기 데이터와 재화 데이터가 Supabase에
+                    실시간으로 기록됩니다. 플레이어는 자신이 잡은 물고기 컬렉션과 재화 내역을
+                    Supabase를 통해 확인할 수 있습니다.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <h3>🎮 다양한 게임 시스템</h3>
+                <p>
+                    ScriptableObject 기반의 인벤토리 및 상점 시스템이 구현되어 있어,
+                    물고기 판매 및 아이템 구매가 가능합니다. NPOI Excel Parser를 활용해
+                    데이터 기반으로 게임 콘텐츠를 관리할 수 있습니다.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <h3>🔄 안정적인 네트워크 동기화</h3>
+                <p>
+                    Server Authority 방식의 이동 구조를 채택하여 공정한 플레이 환경을 제공합니다.
+                    클라이언트 입력과 서버 시뮬레이션을 동일한 프레임 기준으로 정리하여
+                    캐릭터 떨림(Jitter) 현상을 개선하고 부드러운 멀티플레이 경험을 구현했습니다.
+                </p>
+            </div>
         </div>
 
         <div class="game-detail-section">
-            <h2>수정한 버그</h2>
-            <p>
-                멀티플레이 상황에서 플레이어 캐릭터가 앞뒤로 떨리는(Jitter) 오류를 수정했습니다.
-            </p>
-            <ul>
-                <li>
-                    Mirror 기반 서버 권한(Server Authority) 이동 구조에서 클라이언트 입력 처리와 서버 이동 시뮬레이션이
-                    서로 다른 업데이트 루프(Update / FixedUpdate)에서 동작하며 위치 보정이 불안정해지는 문제를 분석했습니다.
-                </li>
-                <li>
-                    입력 처리와 서버 이동 흐름을 동일한 프레임 기준으로 정리하고, 원격 플레이어의 CharacterController 및
-                    로컬 이동 로직이 NetworkTransform 보간 결과와 충돌하지 않도록 구조를 분리했습니다.
-                </li>
-                <li>
-                    이를 통해 원격 플레이어 및 호스트 환경에서 발생하던 캐릭터 떨림(Jitter) 현상을 개선했습니다.
-                </li>
-                <li>
-                    이 과정에서 멀티플레이 환경에서는 로컬에서 자연스럽게 보이는 움직임도 서버 동기화 및 갱신 타이밍이
-                    겹치면 흔들림으로 보일 수 있다는 점을 경험했습니다.
-                </li>
-            </ul>
+            <h2>스크린샷</h2>
+            <div class="game-screenshots">
+                <img src="https://www.sunq.dev/images/projects/multiplayer-fishing-1.png" alt="Multiplayer Fishing 스크린샷 1" class="full-width" onerror="this.style.display='none'">
+                <img src="https://www.sunq.dev/images/projects/multiplayer-fishing-2.png" alt="Multiplayer Fishing 스크린샷 2" onerror="this.style.display='none'">
+                <img src="https://www.sunq.dev/images/projects/multiplayer-fishing-3.png" alt="Multiplayer Fishing 스크린샷 3" onerror="this.style.display='none'">
+                <img src="https://www.sunq.dev/images/projects/multiplayer-fishing-4.png" alt="Multiplayer Fishing 스크린샷 4" onerror="this.style.display='none'">
+                <img src="https://www.sunq.dev/images/projects/multiplayer-fishing-5.png" alt="Multiplayer Fishing 스크린샷 5" onerror="this.style.display='none'">
+                <img src="https://www.sunq.dev/images/projects/multiplayer-fishing-6.png" alt="Multiplayer Fishing 스크린샷 6" onerror="this.style.display='none'">
+            </div>
         </div>
 
         <div class="game-detail-footer">
-            <p style="color: #8b949e;">
-                원본 프로젝트 페이지:
-                <a href="https://www.sunq.dev/projects/multiplayer-fishing.html" target="_blank">
-                    sunq.dev/multiplayer-fishing
-                </a>
-            </p>
-            <a href="../../index.html#projects" class="btn-small" style="margin-top: 1.5rem;">&#8592; 포트폴리오로 돌아가기</a>
+            <a href="../../index.html#projects" class="btn-small">&#8592; 포트폴리오로 돌아가기</a>
         </div>
     </main>
 

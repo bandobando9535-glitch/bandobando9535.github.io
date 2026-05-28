@@ -164,6 +164,21 @@
             font-size: 0.95rem;
         }
 
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #30363d;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+            background: #000;
+        }
+
         @media (max-width: 768px) {
             .game-detail-header h1 {
                 font-size: 1.6rem;
@@ -261,6 +276,16 @@
                     클라이언트 입력과 서버 시뮬레이션을 동일한 프레임 기준으로 정리하여
                     캐릭터 떨림(Jitter) 현상을 개선하고 부드러운 멀티플레이 경험을 구현했습니다.
                 </p>
+            </div>
+        </div>
+
+        <div class="game-detail-section">
+            <h2>시연 영상</h2>
+            <div class="video-wrapper">
+                <video controls poster="https://www.sunq.dev/images/projects/multiplayer-fishing-1.png">
+                    <source src="multiplayer-fishing.mp4" type="video/mp4">
+                    브라우저가 동영상 재생을 지원하지 않습니다.
+                </video>
             </div>
         </div>
 
